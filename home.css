@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", "lacto", "Raleway";
+}
+
+body {
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(10,15,31,0.85), rgba(10,15,31,0.85)),
+        url("bg (2).png") no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+
+
+.container {
+    text-align: center;
+    max-width: 900px;
+    padding: 40px;
+}
+
+.logo img {
+    width: 200px;          /* 400px is VERY large */
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 56px;
+    letter-spacing: 2px;
+    margin-top: 0;         /* IMPORTANT */
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #b3c7ff;
+    margin-top: 5px;       /* IMPORTANT */
+    margin-bottom: 20px;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.logo img,
+h1,
+h2 {
+    margin: 0;
+}
+
+.description {
+    font-size: 18px;
+    color: #d0d8ff;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    padding: 15px 55px;
+    font-size: 25px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.btn.user {
+    background: linear-gradient(45deg, #1e90ff, #005eff);
+}
+
+.btn.admin {
+    background: linear-gradient(45deg, #ff4b4b, #c70000);
+}
+
+.btn.report {
+    background: linear-gradient(45deg, #2ecc71, #1eaa5c);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.feature img {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 18px;
+    color: #cfd8ff;
+}
