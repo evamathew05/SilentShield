@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", "Raleway", "lacto";
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(10,15,31,0.88), rgba(10,15,31,0.88)),
+        url("bg.png") no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+body {
+    background-image: url("bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+}
+
+.track-container {
+    width: 500px;
+    padding: 45px;
+    background: rgba(15, 20, 45, 0.75);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.7);
+}
+
+/* Logo */
+.logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+    font-size: 46px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Title */
+h2 {
+    font-size: 30px;
+    color: #c7d2ff;
+    margin-bottom: 35px;
+}
+
+/* Form */
+.track-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.track-form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #cfd8ff;
+}
+
+.track-form input {
+    padding: 16px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.35);
+    color: white;
+    font-size: 16px;
+}
+
+.track-form input::placeholder {
+    color: #aaa;
+}
+
+.track-form input:focus {
+    outline: none;
+    border-color: #4d7cff;
+}
+
+/* Button */
+.track-form button {
+    padding: 15px;
+    font-size: 20px;
+    background: linear-gradient(135deg, #180236, #e906d9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.track-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(77,124,255,0.6);
+}
+
+/* Footer */
+.footer {
+    margin-top: 35px;
+    font-size: 14px;
+    color: #b0b8ff;
+}

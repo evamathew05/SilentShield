@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", "Raleway", "lacto";
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(10,15,31,0.9), rgba(10,15,31,0.9)),
+        url("bg.png") no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+body {
+    background-image: url("bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+}
+
+.view-container {
+    width: 900px;
+    padding: 25px;
+    background: rgba(15, 20, 45, 0.75);
+    border-radius: 16px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+/* Header */
+.header img {
+    width: 80px;
+    margin-bottom: 0px;
+}
+
+.header h1 {
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
+/* Title */
+h2 {
+    font-size: 30px;
+    color: #c7d2ff;
+    margin-bottom: 0px;
+}
+
+.report-id {
+    font-size: 18px;
+    color: #b0b8ff;
+    margin-bottom: 0px;
+}
+
+/* Report Card */
+.report-card {
+    background: rgba(20, 25, 60, 0.85);
+    border-radius: 14px;
+    padding: 30px;
+    text-align: left;
+}
+
+/* Rows */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.label {
+    font-size: 12px;
+    color: #aab4ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.row p,
+.section p {
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+/* Description */
+.description {
+    line-height: 1.6;
+    color: #e0e5ff;
+}
+
+/* Evidence */
+.evidence-box {
+    margin-top: 15px;
+    height: 150px;
+    background: rgba(255,255,255,0.08);
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-style: italic;
+}
+
+.back-btn button {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: #04011f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn button:hover {
+    transform: scale(1.05);
+    background: #761a81;
+}
+.back {
+    display: block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #af098e;
+    font-size: 16px;
+}

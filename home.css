@@ -35,21 +35,21 @@ body {
 }
 
 .logo img {
-    width: 200px;      
+    width: 200px;          /* 400px is VERY large */
     margin-bottom: 0;
 }
 
 h1 {
     font-size: 56px;
     letter-spacing: 2px;
-    margin-top: 0;        
+    margin-top: 0;         /* IMPORTANT */
     margin-bottom: 5px;
 }
 
 h2 {
     font-size: 28px;
     color: #b3c7ff;
-    margin-top: 5px;   
+    margin-top: 5px;       /* IMPORTANT */
     margin-bottom: 20px;
 }
 h3{
