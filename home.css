@@ -7,43 +7,58 @@
 
 body {
     min-height: 100vh;
+    overflow-x: hidden;
     background: 
         linear-gradient(rgba(10,15,31,0.85), rgba(10,15,31,0.85)),
-        url("bg (2).png") no-repeat center center / cover;
+        url("bg.png") no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
+}
+body {
+    background-image: url("bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
 }
 
 
 
 .container {
     text-align: center;
-    max-width: 900px;
-    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .logo img {
-    width: 200px;          
+    width: 200px;      
     margin-bottom: 0;
 }
 
 h1 {
     font-size: 56px;
     letter-spacing: 2px;
-    margin-top: 0;         
+    margin-top: 0;        
     margin-bottom: 5px;
 }
 
 h2 {
     font-size: 28px;
     color: #b3c7ff;
-    margin-top: 5px;       
+    margin-top: 5px;   
     margin-bottom: 20px;
+}
+h3{
+    font-size: 26px;
+
 }
 .hero {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 6px;
@@ -79,22 +94,23 @@ h2 {
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
-.btn.user {
-    background: linear-gradient(45deg, #1e90ff, #005eff);
-}
 
-.btn.admin {
-    background: linear-gradient(45deg, #ff4b4b, #c70000);
-}
-
-.btn.report {
-    background: linear-gradient(45deg, #2ecc71, #1eaa5c);
-}
 
 .btn:hover {
     transform: scale(1.05);
     opacity: 0.9;
 }
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.report { background: #04011f; }
+.admin  { background: #04011f; }
+.track  { background: #04011f; }
+
 
 .features {
     display: flex;
@@ -103,11 +119,11 @@ h2 {
 }
 
 .feature img {
-    width: 200px;
-    margin-bottom: 10px;
+    width: 140px;
+    margin-bottom: 20px;
 }
 
 .feature p {
-    font-size: 18px;
-    color: #cfd8ff;
+    font-size: 20px;
+    color: #f1f2f6;
 }
