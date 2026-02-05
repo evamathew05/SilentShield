@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Upload Evidence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:url("bg_image.jpg") no-repeat center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: "Rubik", "lacto", "Raleway";
+    color:white;
+}
+
+/* Main container */
+.container{
+    width:100%;
+    height:100%;
+    background:rgba(10,5,40,0.6);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+}
+
+/* Header */
+.header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.header img{
+    width:45px;
+}
+
+/* Title */
+h2{
+    color:white;
+    margin-top:25px;      /* moves title down */
+    margin-bottom:15px;
+}
+
+/* Upload box */
+.upload-box{
+    width:500px;
+    height:280px;
+    border:2px solid rgba(255,255,255,0.2);
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.upload-box img{
+    width:210px;                 /* slightly smaller */
+    margin-bottom:2px;         /* reduce gap */
+    margin-top:10px;           /* move shield downward */
+    filter: drop-shadow(0 0 25px #00ff99);
+}
+
+.upload-box p{
+    font-size:18px;
+    color:#ddd;
+}
+
+/* Hide file input */
+.upload-box input{
+    display:none;
+}
+
+/* Submit button */
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+    background:linear-gradient(to right,#1a347c,#26abcc);
+    color:white;
+    margin-top:15px;
+    font-family: "Rubik", "lacto", "Raleway";
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+/* Back button */
+.back-btn{
+    margin-top:10px;
+    margin-bottom:10px;
+    padding:10px 25px;
+    border-radius:8px;
+    background:linear-gradient(to right,#26127d,#d42cd4);
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <img src="logo.jpg" alt="Logo">
+        SILENT SHIELD
+    </div>
+
+    <h2>Upload Evidence</h2>
+
+    <!-- Upload box -->
+    <label class="upload-box">
+        <img src="upload_icon.jpg" alt="upload">
+        <p>Drag and drop or browse your files...</p>
+        <input type="file">
+    </label>
+
+    <!-- Submit -->
+    <button>Submit Evidence</button>
+
+    <!-- Back -->
+    <button class="back-btn" onclick="location.href='report.html'">⬅ Back to Home</button>
+
+</div>
+
+</body>
+</html>
