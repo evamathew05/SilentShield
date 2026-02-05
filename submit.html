@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report Submitted</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:url("bg_image.jpg") no-repeat center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Rubik","Raleway","lacto";
+    color:white;
+}
+
+.container{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;   /* CENTER content */
+    align-items:center;
+    gap:20px;                 /* control spacing */
+}
+
+/* Header */
+.header{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.header img{
+    width:55px;
+}
+
+/* Main content */
+.main{
+    text-align:center;
+}
+
+.main img{
+    width:220px;
+    margin-bottom:1px;
+    filter: drop-shadow(0 0 25px #00ff88);
+
+
+}
+
+.main h2{
+    font-size:30px;
+    margin-bottom:35px;
+}
+
+.main p{
+    font-size:22px;
+    color:#ffffff;
+}
+
+/* Button */
+button{
+    margin-top:12px;
+    padding:12px 30px;
+    border:none;
+    border-radius:8px;
+    box-shadow: #6385e3;
+    font-size:20px;
+    cursor:pointer;
+    background:linear-gradient(to right,#082269,#c427c4);
+    color:white;
+    font-family:"Rubik","Raleway","lacto";
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <img src="logo.jpg" alt="Logo">
+        SILENT SHIELD
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <img src="success.jpg" alt="Success">
+
+        <h2>Your report has been submitted successfully.</h2>
+        <p id="reportId" style="
+    margin-top:12px;
+    font-size:22px;
+    font-weight:bold;
+    color:hwb(12 85% 13%);
+">
+    Report ID: #00001
+</p>
+
+<p style="font-size:16px; opacity:0.85;">
+    Please save this ID for future reference.
+</p>
+
+
+        <p>Thank you for speaking up to help combat cyberbullying.</p>
+
+        <button onclick="location.href='report.html'">⬅ Back to Home</button>
+    </div>
+
+    
+</div>
+
+<script>
+function generateReportId() {
+    let lastId = localStorage.getItem("silentShieldReportId");
+
+    if (!lastId) {
+        lastId = 0;
+    }
+
+    let newId = parseInt(lastId) + 1;
+    localStorage.setItem("silentShieldReportId", newId);
+
+    return "#" + String(newId).padStart(5, "0");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("reportId").innerText =
+        "Report ID: " + generateReportId();
+});
+</script>
+
+</body>
+</html>
+
