@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anonymous Cyberbullying Report</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:url("bg_image.jpg") no-repeat center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: "Rubik", "lacto","Raleway";
+}
+
+/* Card */
+.card{
+    background: hwb(245 2% 74% / 0.75);
+    backdrop-filter: blur(6px);
+    width:480px;
+    padding:30px 35px;
+    border-radius:20px;
+    box-shadow: 0 0 30px rgb(56, 35, 123);
+}
+
+/* Title */
+.card h1{
+    color:#fffcfc;
+    font-size: 32px;   /* adjust this if you want bigger title */
+}
+
+
+.title-box{
+    display: flex;
+    align-items: center;   /* vertical alignment */
+    justify-content: center;
+    gap: 5px;
+}
+
+.title-box img{
+    height: 3.2em;        /* logo matches title font size */
+    width: auto;
+}
+
+.title-box h1{
+    margin: 0;            /* remove default spacing */
+}
+
+
+
+/* Subtitle */
+.card p{
+    text-align:center;
+    color:rgb(194, 187, 220);
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+/* Labels */
+label{
+    color:lch(99.19% 1.05 18.85);
+    font-size:14px;
+}
+
+/* Inputs */
+select, textarea, input[type="text"]{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+    color: gray;
+    background-color: #040f22;
+    font-family: "Rubik", "lacto","Raleway";
+
+}
+/* Evidence section */
+.evidence-box{
+    margin-bottom:15px;
+}
+
+.evidence-row{
+    display:flex;
+    gap:10px;
+}
+
+.evidence-btn{
+    flex:1;
+    background:#0d0535;
+    color:rgb(255, 255, 255);
+    padding:12px;
+    border-radius:10px;
+    text-align:center;
+    cursor:pointer;
+    font-size:13px;
+    border:1px solid #432fd8;
+}
+
+.evidence-btn:hover{
+    background:#27384f;
+}
+
+.evidence-row input{
+    display:none;
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family: "Rubik", "lacto","Raleway";
+    background: linear-gradient(to right, #341ba3, #d429d4);
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+/* Disclaimer */
+.disclaimer{
+    margin-top:12px;
+    text-align:center;
+    font-size:13px;
+    color:#e0e0e0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="title-box">
+    <img src="logo.jpg" alt="Logo">
+    <h1>Report a bully</h1>
+</div>
+
+    <p>Your identity will remain anonymous. Speak up safely.</p>
+
+    <form>
+
+        <!-- Type of Cyberbullying -->
+        <label>Type of Cyberbullying</label>
+        <select required>
+            <option value="" disabled selected>Select the type of cyberbullying</option>
+            <option>Harassment</option>
+            <option>Hate Speech</option>
+            <option>Threats</option>
+            <option>Impersonation</option>
+            <option>Cyber Stalking</option>
+        </select>
+
+        <!-- Platform / Website -->
+        <label>Platform / Website</label>
+        <input type="text" placeholder="Instagram / WhatsApp / Website name" required>
+
+        <!-- Description -->
+        <label>Description of the Incident</label>
+        <textarea rows="4" placeholder="Describe what happened..." required></textarea>
+
+        <!-- Evidence -->
+        <label>Attach Evidence (Optional)</label>
+        <div class="evidence-box">
+            <div class="evidence-row">
+
+                <label class="evidence-btn">
+                    📷 Upload Screenshot
+                    <input type="file" accept="image/*">
+                </label>
+
+                <label class="evidence-btn">
+                    📅 Select the Date
+                    <input type="date">
+                </label>
+
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit">Submit Report Anonymously</button>
+
+        <div class="disclaimer">
+            No personal details are collected. Your report is secure and anonymous.
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
