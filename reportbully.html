@@ -8,7 +8,7 @@
 body{
     margin:0;
     height:100vh;
-    background:url("bg_image.jpg") no-repeat center center/cover;
+    background:url("bg.png") no-repeat center center/cover;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -65,7 +65,11 @@ label{
 }
 
 /* Inputs */
-select, textarea, input[type="text"]{
+select, 
+textarea, 
+input[type="text"], 
+input[type="date"]{
+
     width:100%;
     padding:10px;
     margin-top:6px;
@@ -100,14 +104,57 @@ select, textarea, input[type="text"]{
     font-size:13px;
     border:1px solid #432fd8;
 }
+.evidence-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.date-input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+.date-input {
+    color: #ffffff;
+}
+.date-label{
+    font-size: 12px;
+    color: #b3c7ff;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.date-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.date-input{
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
 
 .evidence-btn:hover{
     background:#27384f;
 }
 
-.evidence-row input{
+.evidence-row input[type="file"]{
     display:none;
 }
+
+
 
 /* Button */
 button{
@@ -133,6 +180,23 @@ button:hover{
     font-size:13px;
     color:#e0e0e0;
 }
+.footer-link{
+    margin-top:20px;
+    text-align:center;
+}
+
+.footer-link a{
+    text-decoration:none;
+    color:#b3c7ff;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.footer-link a:hover{
+    color:white;
+    text-decoration:underline;
+}
+
 </style>
 </head>
 
@@ -141,7 +205,7 @@ button:hover{
 <div class="card">
 
     <div class="title-box">
-    <img src="logo.jpg" alt="Logo">
+    <img src="logo.png" alt="Logo">
     <h1>Report a bully</h1>
 </div>
 
@@ -178,13 +242,15 @@ button:hover{
                     📷 Upload Screenshot
                     <input type="file" accept="image/*">
                 </label>
+                <div class="evidence-btn">
+                    <div class="date-label">
+                        📅Select the Date</div>
+                         <div class="date-field"></div>
+                        <input type="date" class="date-input">
+                    </div>
+                </div>
 
-                <label class="evidence-btn">
-                    📅 Select the Date
-                    <input type="date">
-                </label>
-
-            </div>
+               
         </div>
 
         <!-- Submit -->
@@ -195,9 +261,14 @@ button:hover{
         </div>
 
     </form>
+    
+
+<div class="footer-link">
+    <a href="home.html">← Back to Home</a>
+</div>
+
 
 </div>
 
 </body>
 </html>
-
