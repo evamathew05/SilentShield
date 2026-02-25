@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #341ba3;
+  --color-brand-secondary: #d429d4;
+  --color-brand-accent: #00ff88;
+  --color-navy-dark: #040f22;
+  --color-navy-card: rgba(15, 20, 45, 0.75);
+  
+  --font-sans: "Rubik", "Inter", system-ui, sans-serif;
+  
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(212, 41, 212, 0.3);
+}
+
+@layer base {
+  html {
+    @apply m-0 p-0 h-full w-full;
+    background: linear-gradient(rgba(10, 15, 31, 0.95), rgba(10, 15, 31, 0.95)), url("/bg.png") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #040f22; /* Fallback color to prevent white flash */
+  }
+
+  body {
+    @apply m-0 p-0 min-h-full w-full font-sans text-white antialiased overflow-x-hidden bg-transparent;
+  }
+
+  #root {
+    @apply min-h-screen w-full;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-navy-card backdrop-blur-xl border border-white/10 rounded-3xl shadow-premium;
+  }
+
+  .input-field {
+    @apply w-full px-5 py-4 bg-black/30 border border-white/10 rounded-xl outline-none transition-all duration-200 text-lg;
+    @apply focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 placeholder:text-gray-500;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold rounded-xl shadow-lg transition-all duration-300;
+    @apply hover:scale-[1.03] hover:shadow-glow active:scale-95 cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply px-8 py-4 bg-white/5 border border-white/20 text-white font-bold rounded-xl transition-all duration-300;
+    @apply hover:bg-white/10 hover:border-white/40 active:scale-95 cursor-pointer;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
