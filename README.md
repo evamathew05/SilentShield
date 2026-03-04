@@ -56,8 +56,8 @@
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/lunarbyte647/SilentShield-Test.git
-    cd SilentShield-New
+    git clone https://github.com/evamathew/SilentShield.git
+    cd SilentShield
     ```
 
 2.  **Install Dependencies:**
