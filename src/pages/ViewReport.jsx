@@ -91,8 +91,8 @@ const ViewReport = () => {
       
       return {
         id: fileId,
-        viewUrl: view.href || view.toString(),
-        previewUrl: preview.href || preview.toString()
+        viewUrl: view.toString(),
+        previewUrl: preview.toString()
       };
     } catch (e) {
       console.error("URL Generation Error for ID:", fileId, e);
@@ -156,7 +156,7 @@ const ViewReport = () => {
                             >
                                 <img 
                                     src={item.previewUrl} 
-                                    className="w-full h-full object-cover blur-[3px] transition-all duration-500 group-hover:scale-105 group-hover:blur-none group-hover:brightness-75" 
+                                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-75" 
                                     alt="Thumbnail"
                                     onError={(e) => {
                                         console.warn("Retrying image load with View URL...");

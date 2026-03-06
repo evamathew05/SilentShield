@@ -91,8 +91,26 @@ const ReportBully = () => {
     setPlatformError(false);
     setIsProcessing(true);
     let combinedText = "";
-    let detectedType = 'Harassment';
+    let detectedType = null;
     let isFlaggedOverall = false;
+
+    // SEVERITY HIERARCHY (Higher = More Critical)
+    const severityMap = {
+        'Sexual Harassment': 6,
+        'Threats': 5,
+        'Hate Speech': 4,
+        'Cyber Stalking': 3,
+        'Harassment': 2,
+        'Impersonation': 1
+    };
+
+    const updateWithSeverity = (newType) => {
+        if (!newType) return;
+        isFlaggedOverall = true;
+        if (!detectedType || (severityMap[newType] > severityMap[detectedType])) {
+            detectedType = newType;
+        }
+    };
 
     // Use descriptive labels for the AI to understand context better
     const aiLabels = [
@@ -122,8 +140,7 @@ const ReportBully = () => {
         // 1. Check Smart Keywords First
         const smartResult = classifySmart(text);
         if (smartResult) { 
-            detectedType = smartResult.type; 
-            isFlaggedOverall = true; 
+            updateWithSeverity(smartResult.type);
         }
 
         // 2. Call Local AI Server for Deep Analysis
@@ -144,8 +161,7 @@ const ReportBully = () => {
             const topScore = bertResult.scores[0];
 
             if (labelMap[topLabel] && topScore > 0.45) {
-              detectedType = labelMap[topLabel];
-              isFlaggedOverall = true;
+              updateWithSeverity(labelMap[topLabel]);
             }
           }
         } catch (serverErr) {
@@ -153,7 +169,7 @@ const ReportBully = () => {
         }
       }
 
-      if (!isFlaggedOverall) {
+      if (!isFlaggedOverall || !detectedType) {
         setRejectionMessage('No clear harassment detected in these screenshots.');
         setIsProcessing(false);
         return;

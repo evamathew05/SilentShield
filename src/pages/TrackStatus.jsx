@@ -10,6 +10,15 @@ const TrackStatus = () => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    if (id) {
+      navigator.clipboard.writeText(id);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   useEffect(() => {
     const fetchReport = async () => {
@@ -68,7 +77,19 @@ const TrackStatus = () => {
         <header className="mb-12 border-b border-white/5 pb-10">
           <img src="/logo.png" alt="Silent Shield Logo" className="w-20 mx-auto mb-6" />
           <h1 className="text-4xl font-black mb-2 tracking-tight">Report Tracker</h1>
-          <p className="font-mono text-brand-accent tracking-widest text-sm uppercase">REFERENCE ID: {report.$id}</p>
+          <div className="flex flex-col items-center justify-center gap-3">
+            <p className="font-mono text-brand-accent tracking-[0.2em] text-sm uppercase">REFERENCE ID: {report.$id}</p>
+            <button 
+              onClick={copyToClipboard}
+              className={`px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase tracking-[0.1em] transition-all duration-300 cursor-pointer ${
+                copied 
+                ? 'bg-brand-accent text-black scale-105 shadow-glow' 
+                : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10'
+              }`}
+            >
+              {copied ? 'Copied ✓' : 'Copy ID'}
+            </button>
+          </div>
         </header>
 
         {/* Professional Stepper UI */}

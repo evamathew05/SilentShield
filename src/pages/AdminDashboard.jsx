@@ -22,7 +22,11 @@ const AdminDashboard = () => {
       const docs = response.documents;
       setReports(docs);
       
-      const pending = docs.filter(r => r.status === 'pending').length;
+      const pending = docs.filter(r => 
+        r.status === 'pending' || 
+        r.status === 'under review' || 
+        r.status === 'reviewed'
+      ).length;
       const resolved = docs.filter(r => r.status === 'resolved').length;
       setStats({
         total: docs.length,
