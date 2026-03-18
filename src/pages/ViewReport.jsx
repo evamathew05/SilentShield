@@ -79,10 +79,12 @@ const ViewReport = () => {
   if (!report) return null;
 
   // ROBUST ID EXTRACTION
-  const evidenceIds = (report.evidenceId || "")
-    .split(',')
-    .map(s => s.trim())
-    .filter(id => id.length > 5); // Ensure they are valid IDs
+  let evidenceIds = [];
+  if (Array.isArray(report.evidenceId)) {
+    evidenceIds = report.evidenceId;
+  } else if (typeof report.evidenceId === 'string') {
+    evidenceIds = report.evidenceId.split(',').map(s => s.trim()).filter(id => id.length > 5);
+  }
 
   const evidenceItems = evidenceIds.map(fileId => {
     try {
@@ -156,10 +158,9 @@ const ViewReport = () => {
                             >
                                 <img 
                                     src={item.previewUrl} 
-                                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-75" 
+                                    className="w-full h-full object-cover transition-all duration-500 blur-[6px] group-hover:blur-none group-hover:scale-105 group-hover:brightness-100 brightness-75" 
                                     alt="Thumbnail"
-                                    onError={(e) => {
-                                        console.warn("Retrying image load with View URL...");
+                                    onError={(e) => {                                        console.warn("Retrying image load with View URL...");
                                         e.target.src = item.viewUrl; // Fallback to view URL if preview fails
                                     }}
                                 />

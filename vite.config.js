@@ -9,10 +9,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    headers: {
-      "Cross-Origin-Opener-Policy": "same-origin",
-      "Cross-Origin-Embedder-Policy": "require-corp",
-    },
     allowedHosts: ['unprosaically-diachronic-rosenda.ngrok-free.dev'],
   },
   resolve: {
